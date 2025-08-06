@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'component/custom_button.dart'; 
+import 'component/Customtextfied.dart';
 
 
 class CustomInputField extends StatelessWidget {
@@ -68,20 +70,16 @@ class _RegisterPageState extends State<RegisterPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomInputField(
-              label: "Nama",
-              controller: _nameController,
+            Container(
+              child: CustomTextField(controller: _nameController, label: "name", labelColor: Colors.black, pass: false),
             ),
-            CustomInputField(
-              label: "Username",
-              controller: _emailController,
+            Container(
+              child: CustomTextField(controller:_emailController, label: "ussername", labelColor: Colors.black, pass: false),
             ),
-
-            CustomInputField(
-              label: "Password",
-              controller: _passwordController,
-              obscureText: true,
+            Container(
+              child: CustomTextField(controller: _passwordController, label: "password", labelColor: Colors.black, pass: false),
             ),
+            
 
             Container(
               margin: const EdgeInsets.only(bottom: 15),
@@ -122,20 +120,21 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
             ),
 
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text("Pendaftaran berhasil!"),
-                    ),
-                  );
-                },
-                child: const Text("Daftar"),
-              ),
-            ),
+           SizedBox(
+            width: double.infinity,
+            child: CustomButton(
+            myText: "Daftar",
+            myTexcolor: Colors.white,
+            onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+            content: Text("Pendaftaran berhasil!"),
+        ),
+      );
+    },
+  ),
+),
+
           ],
         ),
       ),
