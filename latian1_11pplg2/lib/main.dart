@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:latian1_11pplg2/login_page.dart';
 import 'package:latian1_11pplg2/pages/calculator_pages.dart';
+import 'package:latian1_11pplg2/routes/pages.dart';
+import 'package:latian1_11pplg2/routes/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,13 +15,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: CalculatorPages (),
+      debugShowCheckedModeBanner: false,
+      initialRoute: AppRoutes.calculatorpage,
+      getPages: AppPages.pages,
     );
   }
 }
-
 

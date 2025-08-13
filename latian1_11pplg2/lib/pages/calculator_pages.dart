@@ -5,6 +5,7 @@ import 'package:latian1_11pplg2/component/Customtextfied.dart';
 import 'package:latian1_11pplg2/component/custom_button.dart';
 import 'package:latian1_11pplg2/controllers/calculator.dart';
 import 'package:get/get.dart';
+import 'package:latian1_11pplg2/pages/FootballPLayer.dart';
 
 
 class CalculatorPages extends StatelessWidget {
@@ -44,10 +45,17 @@ class CalculatorPages extends StatelessWidget {
            Obx(() {
             return Text("Hasil " + calculatorController.txthasil.value);
             }),
-             const SizedBox(height: 20),
             CustomButton(
               myText: "Clear",
               onPressed: calculatorController.clear,
+              myTexcolor: Colors.white,backgroundColor: Colors.redAccent,
+              ),
+             const SizedBox(height: 20),
+            CustomButton(
+              myText: "football PLayer",
+              onPressed: (){
+                Get.to(()=> Footballplayer());
+              },
               myTexcolor: Colors.white,
               backgroundColor: Colors.redAccent,
             ),
